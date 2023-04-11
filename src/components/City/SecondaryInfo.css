@@ -1,0 +1,26 @@
+.clouds,
+.humidity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.weather-img {
+  margin-top: 50px;
+  border-radius: 10px;
+  filter: blur(1px);
+  width: 80%;
+}
+
+@media (max-width: 1300px) {
+  .weather-img {
+    display: none;
+  }
+
+  .humidity,
+  .clouds {
+    justify-content: center;
+  }
+}

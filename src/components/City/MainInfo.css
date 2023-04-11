@@ -1,0 +1,28 @@
+.main-info {
+  border-bottom: 1px solid #f7f6f9;
+  padding-bottom: 100px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  background: no-repeat center;
+}
+
+.city {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.temperature {
+  font-size: 50px;
+}
+
+.time {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.day {
+  font-weight: 700;
+}

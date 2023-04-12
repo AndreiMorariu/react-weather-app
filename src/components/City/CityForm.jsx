@@ -8,8 +8,15 @@ function CityForm({ onSubmit }) {
   const [input, setInput] = useState('');
   const [options, setOptions] = useState();
 
+  const inputChangeHandler = (e) => {
+    if (input.length === 0) setInput(e.target.value.toUpperCase());
+    else setInput(e.target.value);
+  };
+
   const handleSelectOptionClick = (option) => {
     setInput(option);
+    onSubmit(input);
+    setInput('');
   };
 
   const formSubmitHandler = (e) => {
@@ -24,6 +31,7 @@ function CityForm({ onSubmit }) {
     const unique = [
       ...new Map(options.map((item) => [item.name, item])).values(),
     ];
+
     setOptions(unique);
   }, [input]);
 
@@ -46,7 +54,7 @@ function CityForm({ onSubmit }) {
         <div className="form-group">
           <input
             type="text"
-            onChange={(e) => setInput(e.target.value)}
+            onChange={inputChangeHandler}
             placeholder="Search for places..."
             value={input}
           />

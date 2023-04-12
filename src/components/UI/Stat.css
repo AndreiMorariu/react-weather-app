@@ -18,3 +18,9 @@
 .stat .stat-value {
   font-size: 40px;
 }
+
+@media (max-width: 900px) {
+  .stat {
+    width: 80%;
+  }
+}

@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react';
 
 function SecondaryInfo({ data }) {
   const [imageUrl, setImageUrl] = useState();
+
   const getImage = async () => {
     const response = await fetch(
       'https://api.unsplash.com/photos/random?client_id=p61wNmp2QLB2-rrG6QkaikyC-SplxPFbTIvAPyM8Ulc&query=weather&orientation=landscape'
     );
     const data = await response.json();
-    console.log(data);
     setImageUrl(data.urls.thumb);
   };
 

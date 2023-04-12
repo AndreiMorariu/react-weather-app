@@ -15,15 +15,7 @@ import './App.css';
 function App() {
   const [data, setData] = useState();
 
-  const getData = async (city) => {
-    const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=bf3ca54e42ca49bda7e72248230204&q=${city}&aqi=no`
-    );
-    const data = await response.json();
-    setData(data);
-  };
-
-  useEffect(() => {
+  const userLocation = async () => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
@@ -42,6 +34,23 @@ function App() {
         return;
       }
     );
+  };
+
+  const getData = async (city) => {
+    try {
+      const response = await fetch(
+        `http://api.weatherapi.com/v1/current.json?key=bf3ca54e42ca49bda7e72248230204&q=${city}&aqi=no`
+      );
+      if (!response.ok) throw new Error('Something went wrong');
+      const data = await response.json();
+      setData(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    userLocation();
   }, []);
 
   return (

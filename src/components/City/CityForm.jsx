@@ -7,7 +7,7 @@ function CityForm({ onSubmit }) {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    if (city) onSubmit(city);
+    onSubmit(city);
     setCity('');
   };
 

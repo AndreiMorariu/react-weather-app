@@ -1,12 +1,10 @@
 .main-info {
   border-bottom: 1px solid #f7f6f9;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .icon {
   width: 100px;
-  height: 100px;
-  background: no-repeat center;
 }
 
 .city {

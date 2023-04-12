@@ -29,10 +29,11 @@ function CityForm({ onSubmit }) {
 
   const renderOptions =
     input &&
-    options.slice(0, 4).map((option) => (
+    options.slice(0, 4).map((option, i) => (
       <li
         className="option"
         onClick={() => handleSelectOptionClick(option.name)}
+        key={i}
       >
         <AiOutlineArrowRight />
         {option.name}

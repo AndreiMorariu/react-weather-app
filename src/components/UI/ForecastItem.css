@@ -1,0 +1,11 @@
+.forecast {
+  background-color: #fff;
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

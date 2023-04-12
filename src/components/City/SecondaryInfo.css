@@ -8,10 +8,10 @@
 }
 
 .weather-img {
-  margin-top: 50px;
   border-radius: 10px;
-  filter: blur(1px);
+  filter: blur(0.6px);
   width: 80%;
+  margin-top: 20%;
 }
 
 @media (max-width: 1300px) {
@@ -22,5 +22,11 @@
   .humidity,
   .clouds {
     justify-content: center;
+  }
+}
+
+@media (max-width: 555px) {
+  .secondary-info-icon {
+    display: none;
   }
 }

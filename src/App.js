@@ -15,12 +15,22 @@ import Stat from './components/UI/Stat';
 import ForecastItem from './components/UI/ForecastItem';
 
 const stats = [
-  { icon: FiWind, text: 'Wind status', unit: 'km/h' },
-  { icon: SlSpeedometer, text: 'Pressure', unit: 'mb' },
-  { icon: TbUvIndex, text: 'Uv Index', unit: 'mW/cm2' },
-  { icon: WiCloudyGusts, text: 'Wind Gust', unit: 'km/h' },
-  { icon: BsCloudRainHeavy, text: 'Precipitation', unit: 'mm' },
-  { icon: AiOutlineCompass, text: 'Wind Direction', unit: 'km/h' },
+  { data: 'wind_kph', icon: FiWind, text: 'Wind status', unit: 'km/h' },
+  { data: 'pressure_mb', icon: SlSpeedometer, text: 'Pressure', unit: 'mb' },
+  { data: 'feelslike_c', icon: TbUvIndex, text: 'Uv Index', unit: 'mW/cm2' },
+  { data: 'gust_kph', icon: WiCloudyGusts, text: 'Wind Gust', unit: 'km/h' },
+  {
+    data: 'precip_mm',
+    icon: BsCloudRainHeavy,
+    text: 'Precipitation',
+    unit: 'mm',
+  },
+  {
+    data: 'wind_dir',
+    icon: AiOutlineCompass,
+    text: 'Wind Direction',
+    unit: 'km/h',
+  },
 ];
 
 function App() {
@@ -66,6 +76,23 @@ function App() {
     }
   };
 
+  console.log(data);
+
+  const renderStats = () => {
+    const element = data.current;
+    return stats.map((stat, i) => {
+      return (
+        <Stat
+          data={element[stats[i].data]}
+          icon={stat.icon}
+          text={stat.text}
+          unit={stat.unit}
+          key={i}
+        />
+      );
+    });
+  };
+
   return (
     <div className='container'>
       <div className='left-container'>
@@ -92,11 +119,7 @@ function App() {
           })}
         </div>
         <h2>Today's highlights</h2>
-        {stats.map((stat, i) => {
-          return (
-            <Stat icon={stat.icon} text={stat.text} unit={stat.unit} key={i} />
-          );
-        })}
+        {data.current && renderStats()}
       </div>
     </div>
   );

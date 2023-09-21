@@ -19,21 +19,21 @@ function SecondaryInfo({ data }) {
   }, []);
 
   return (
-    <div className="secondary-info">
-      <div className="clouds">
-        <AiOutlineCloud size={30} className="secondary-info-icon" />
-        <p className="clouds-info">
+    <div className='secondary-info'>
+      <div className='clouds'>
+        <AiOutlineCloud size={30} className='secondary-info-icon' />
+        <p className='clouds-info'>
           Percentage of clouds: {data.current.cloud}%
         </p>
       </div>
-      <div className="humidity">
-        <WiHumidity size={30} className="secondary-info-icon" />
-        <p className="humidity-info">
+      <div className='humidity'>
+        <WiHumidity size={30} className='secondary-info-icon' />
+        <p className='humidity-info'>
           Percentage of humidity: {data.current.humidity}%
         </p>
       </div>
       {imageUrl && (
-        <img src={imageUrl} alt="weather image " className="weather-img" />
+        <img src={imageUrl} alt='weather image ' className='weather-img' />
       )}
     </div>
   );

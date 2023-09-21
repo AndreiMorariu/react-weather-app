@@ -17,15 +17,15 @@ function MainInfo({ data }) {
   const hour = date.getHours() + ':' + date.getMinutes();
 
   return (
-    <div className="main-info">
-      <h2 className="city">{data.location.name}</h2>
-      <img src={data.current.condition.icon} alt="" className="icon" />
-      <p className="temperature">
+    <div className='main-info'>
+      <h2 className='city'>{data.location.name}</h2>
+      <img src={data.current.condition.icon} alt='' className='icon' />
+      <p className='temperature'>
         {data.current.temp_c} <RiCelsiusFill size={40} />{' '}
       </p>
-      <p className="time">
-        <span className="day">{days[day]}</span>,{' '}
-        <span className="hour">{hour}</span>
+      <p className='time'>
+        <span className='day'>{days[day]}</span>,{' '}
+        <span className='hour'>{hour}</span>
       </p>
     </div>
   );

@@ -76,8 +76,6 @@ function App() {
     }
   };
 
-  console.log(data);
-
   const renderStats = () => {
     const element = data.current;
     return stats.map((stat, i) => {
